@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: Speech to Text Service
+  version: 1.0.0
+  description: A service to transcribe audio files into text (limited to french).
+servers:
+  - url: 'http://localhost:5000'
+paths:
+  /transcribe:
+    post:
+      summary: Transcribe an audio file (french)
+      description: Upload an audio file and get its transcription.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                audio:
+                  type: string
+                  format: binary
+                  description: The audio file to transcribe.
+              required:
+                - audio
+      responses:
+        200:
+          description: Successful transcription.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranscriptionResponse'
+        400:
+          description: Invalid request (e.g., no file or wrong format).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        413:
+          description: Audio file is too large.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        415:
+          description: Unsupported audio format.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        500:
+          description: Server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    TranscriptionResponse:
+      type: object
+      properties:
+        transcription:
+          type: string
+          description: The transcription of the uploaded audio file.
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message describing what went wrong.
