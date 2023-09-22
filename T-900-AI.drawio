@@ -1,0 +1,126 @@
+<mxfile host="65bd71144e">
+    <diagram id="9L8Mlvx7ptYCxZx5tv1p" name="Page-2">
+        <mxGraphModel dx="1269" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-23" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=classic;startSize=8;endSize=8;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="MPya0k2SZh1OT22v-Xzj-2" target="MPya0k2SZh1OT22v-Xzj-8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-24" value="TravelOrder" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-23" vertex="1" connectable="0">
+                    <mxGeometry x="0.0083" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-2" value="«service»&lt;br&gt;&lt;b&gt;NLP&lt;br&gt;&lt;/b&gt;Takes text as input, outputs the desired travel in json format" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Helvetica;fontSize=12;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="200" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-3" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-2" vertex="1">
+                    <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+                        <mxPoint x="-27" y="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-22" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=classic;startSize=8;endSize=8;" parent="1" source="MPya0k2SZh1OT22v-Xzj-4" target="MPya0k2SZh1OT22v-Xzj-8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-26" value="TrainItinerary" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-22" vertex="1" connectable="0">
+                    <mxGeometry x="-0.5333" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-4" value="«service»&lt;b&gt;&lt;br&gt;TravelOptimizer&lt;/b&gt;&lt;br&gt;Determine optimal train itinerary" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Helvetica;fontSize=12;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="200" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-5" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-4" vertex="1">
+                    <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+                        <mxPoint x="-27" y="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-20" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=classic;startSize=8;endSize=8;" parent="1" source="MPya0k2SZh1OT22v-Xzj-6" target="MPya0k2SZh1OT22v-Xzj-8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-21" value="text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-20" vertex="1" connectable="0">
+                    <mxGeometry x="-0.7071" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="-8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-6" value="«service»&lt;b&gt;&lt;br&gt;VoiceRecognition&lt;/b&gt;&lt;br&gt;Takes in a french audio travel order,&lt;br&gt;outputs the order in text format" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Helvetica;fontSize=12;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="-120" y="200" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-7" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-6" vertex="1">
+                    <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+                        <mxPoint x="-27" y="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=classic;startSize=8;endSize=8;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" source="MPya0k2SZh1OT22v-Xzj-8" target="MPya0k2SZh1OT22v-Xzj-2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-17" value="text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-10" vertex="1" connectable="0">
+                    <mxGeometry x="0.2917" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-1" y="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-27" value="NumberedSentences" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-10" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0833" y="-4" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-11" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=classic;startSize=8;endSize=8;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="MPya0k2SZh1OT22v-Xzj-8" target="MPya0k2SZh1OT22v-Xzj-6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="30" y="380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-18" value="audio" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-11" vertex="1" connectable="0">
+                    <mxGeometry x="0.8542" y="-2" relative="1" as="geometry">
+                        <mxPoint y="26" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-12" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=classic;startSize=8;endSize=8;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="MPya0k2SZh1OT22v-Xzj-8" target="MPya0k2SZh1OT22v-Xzj-4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="510" y="420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-25" value="TravelOrder" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-12" vertex="1" connectable="0">
+                    <mxGeometry x="0.7434" y="4" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-8" value="«API»&lt;br&gt;&lt;b&gt;PublicAPI&lt;/b&gt;&lt;br&gt;Mediator between our services&lt;br&gt;Gets/receives data&lt;br&gt;Formats text to NumberedSentences" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Helvetica;fontSize=12;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="360" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-9" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-8" vertex="1">
+                    <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+                        <mxPoint x="-27" y="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-13" value="«External API»&lt;br&gt;&lt;b&gt;Gcloud Speech-to-text / AWS / ...&amp;nbsp;&lt;/b&gt;&lt;br&gt;Takes in a audio, outputs text" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Helvetica;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="-120" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-14" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-13" vertex="1">
+                    <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+                        <mxPoint x="-27" y="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-15" value="TravelResolver" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;startSize=40;fillColor=#647687;strokeColor=#314354;" parent="1" vertex="1">
+                    <mxGeometry x="-160" y="120" width="760" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-16" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=classic;startSize=8;endSize=8;" parent="1" source="MPya0k2SZh1OT22v-Xzj-6" target="MPya0k2SZh1OT22v-Xzj-13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-29" value="DataModels" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;startSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="-440" y="120" width="240" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-35" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;lt;&amp;lt; Plain text &amp;gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;NumberedSentence&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&amp;lt;sentence_id&amp;gt;,&amp;lt;sentence&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="MPya0k2SZh1OT22v-Xzj-29" vertex="1">
+                    <mxGeometry x="20" y="60" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="MPya0k2SZh1OT22v-Xzj-34" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center;&quot;&gt;&amp;lt;&amp;lt; Plain text &amp;gt;&amp;gt;&lt;b style=&quot;text-decoration-line: underline;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;TravelOrder&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&amp;lt;sentence_id&amp;gt;,&amp;lt;from&amp;gt;,&amp;lt;to&amp;gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 8px;&quot;&gt;OR&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;&amp;lt;sentence_id&amp;gt;,&amp;lt;error_code&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="MPya0k2SZh1OT22v-Xzj-29" vertex="1">
+                    <mxGeometry x="20" y="150" width="200" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

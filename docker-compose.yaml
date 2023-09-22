@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  voice-recognition-service:
+    build: ./NLPService
+    working_dir: /app
+    volumes:
+      - ./VoiceRecognitionService:/app
+    ports:
+      - "5001:5000"
+    networks:
+      - app-network
+    # command: tail -f /dev/null
+    command: flask --app index run --host=0.0.0.0 --debug
+
+  nlp-service:
+    build: ./VoiceRecognitionService
+    working_dir: /app
+    volumes:
+      - ./NLPService:/app
+    ports:
+      - "5002:5000"
+    networks:
+      - app-network
+    # command: tail -f /dev/null
+    command: flask --app index run --host=0.0.0.0 --debug
+
+networks:
+  app-network:
+    driver: bridge
