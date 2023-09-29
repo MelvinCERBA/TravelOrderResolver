@@ -30,7 +30,7 @@ class TrainTravelAI:
             stop_id = row['stop_id']
             if stop_id.startswith('StopPoint:'):
                 trips = list(self.stop_times_df.loc[self.stop_times_df['stop_id'] == stop_id]['trip_id'])
-                self.stations_links[row['parent_station']] = {
+                self.stations_links[stop_id] = {
                     'trip_ids': trips
                 }
 
@@ -45,6 +45,9 @@ class TrainTravelAI:
             stop_id = row['stop_id']
 
             self.graph.nodes[stop_id]['trip_id'].append(trip_id)
+
+            if stop_id.startswith('StopPoint:'):
+                self.graph.nodes[stop_id]['trip_id'].extend(self.stations_links[stop_id]['trip_ids'])
 
             if trip_id in self.trip_data:
                 route_id = self.trip_data[trip_id]['route_id']
