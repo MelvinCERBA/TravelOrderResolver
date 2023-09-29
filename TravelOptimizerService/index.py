@@ -21,17 +21,10 @@ def hello_world():
     return "<p>Hello from TravelOptimizerService !</p>"
 
 
-@app.route('/fastest_route', methods=['GET'])
+@app.route('/fastest_route', methods=['GET', 'POST'])
 def fastest_route():
-    # source_station_name = request.args.get('source')
-    # destination_station_name = request.args.get('destination')
-    #
-    # source_station = ai.get_station_id_by_name(source_station_name)
-    # destination_station = ai.get_station_id_by_name(destination_station_name)
-
-    print("fastest_route")
-    result = ai.find_fastest_route("StopPoint:OCETrain TER-87317115", "StopPoint:OCETrain TER-87575480")
-    print(result)
+    body = request.get_json(request.data)
+    result = ai.find_fastest_route(body['start_stop'], body['end_stop'])
     return jsonify({"fastest_route": result})
 
 
