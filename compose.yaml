@@ -1,0 +1,56 @@
+version: '3.8'
+services:
+  public-api-service:
+    build: ./PublicAPI
+    working_dir: /app
+    volumes:
+      - ./PublicAPI:/app
+    ports:
+      - "5001:5000"
+    networks:
+      - app-network
+    # command: tail -f /dev/null
+    command: flask --app index run --host=0.0.0.0 --debug
+  
+  travel-optimizer-service:
+    build: ./TravelOptimizerService
+    working_dir: /app
+    volumes:
+      - ./TravelOptimizerService:/app
+    ports:
+      - "5002:5000"
+    networks:
+      - app-network
+    # command: tail -f /dev/null
+    command: flask --app index run --host=0.0.0.0 --debug
+
+  voice-recognition-service:
+    build: ./VoiceRecognitionService
+    working_dir: /app
+    volumes:
+      - ./VoiceRecognitionService:/app
+    ports:
+      - "5003:5000"
+    networks:
+      - app-network
+    environment:
+      FLASK_ENV: development
+
+    # command: tail -f /dev/null
+    command: flask --app index run --host=0.0.0.0 --debug
+
+  nlp-service:
+    build: ./NLPService
+    working_dir: /app
+    volumes:
+      - ./NLPService:/app
+    ports:
+      - "5004:5000"
+    networks:
+      - app-network
+    # command: tail -f /dev/null
+    command: flask --app index run --host=0.0.0.0 --debug
+
+networks:
+  app-network:
+    driver: bridge
