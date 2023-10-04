@@ -1,4 +1,5 @@
 from flask import g, request, abort
+import traceback
 
 # test 
 def init_middlewares(app):
@@ -14,5 +15,6 @@ def init_middlewares(app):
 
     @app.errorhandler(Exception)
     def _unhandled_exception(e):
-        app.logger.error('Unhandled Exception: %s', e)
+        tb = traceback.format_exc()  # Gets the full traceback
+        app.logger.error('Unhandled Exception: %s\n%s', (e, tb))
         return "Something went wrong", 500
