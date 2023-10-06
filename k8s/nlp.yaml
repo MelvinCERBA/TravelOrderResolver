@@ -1,0 +1,52 @@
+## CONFIG ##
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nlp-config
+data:
+  FLASK_ENV: "development"
+
+---
+
+## SERVICE ##
+apiVersion: v1
+kind: Service
+metadata:
+  name: nlp-service
+spec:
+  selector:
+    app: nlp
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+    
+---
+
+## DEPLOYMENT ##
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nlp-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nlp
+  template:
+    metadata:
+      labels:
+        app: nlp
+    spec:
+      containers:
+      - name: nlp-container
+        image: melvincerba/nlp-service-prod:0.0.1
+        ports:
+        - containerPort: 5000
+        command: ["/usr/local/bin/gunicorn"]
+        args: ["-b", "0.0.0.0:5000", "index:app"]
+        envFrom:
+        - configMapRef:
+            name: nlp-config
+        - secretRef:
+            name: nlp-secret

@@ -1,0 +1,52 @@
+## CONFIG ##
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: public-api-config
+data:
+  FLASK_ENV: "development"
+
+---
+
+## SERVICE ##
+apiVersion: v1
+kind: Service
+metadata:
+  name: public-api-service
+spec:
+  selector:
+    app: public-api
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5000
+
+---
+
+## DEPLOYMENT ##
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: public-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: public-api
+  template:
+    metadata:
+      labels:
+        app: public-api
+    spec:
+      containers:
+      - name: public-api-container
+        image: melvincerba/public-api-service-prod:0.0.1 # Replace with your actual image location
+        ports:
+        - containerPort: 5000
+        command: ["gunicorn"]
+        args: ["-b", "0.0.0.0:5000", "index:app"]
+        envFrom:
+        - configMapRef:
+            name: public-api-config
+        - secretRef:
+            name: public-api-secret

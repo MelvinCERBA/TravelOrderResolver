@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microservices-ingress
+spec:
+  rules:
+  - host: nlp-service.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nlp-service
+            port:
+              number: 5000
+  - host: voice-recognition-service.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: voice-recognition-service
+            port:
+              number: 5000
+  - host: travel-optimizer-service.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: travel-optimizer-service
+            port:
+              number: 5000
+  - host: public-api.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: public-api-service
+            port:
+              number: 5000

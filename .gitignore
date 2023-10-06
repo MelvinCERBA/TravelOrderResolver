@@ -3,3 +3,9 @@
 *.pyc
 */test_data/*
 */uploads/audio/*
+
+# Kubernetes
+secrets.yaml
+
+# Voice recognition service 
+*/models/*

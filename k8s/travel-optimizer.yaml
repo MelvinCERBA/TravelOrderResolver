@@ -1,0 +1,52 @@
+## CONFIG ##
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: travel-optimizer-config
+data:
+  FLASK_ENV: "development"
+
+---
+
+## SERVICE ##
+apiVersion: v1
+kind: Service
+metadata:
+  name: travel-optimizer-service
+spec:
+  selector:
+    app: travel-optimizer
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+    
+---
+
+## DEPLOYMENT ##
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-optimizer-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: travel-optimizer
+  template:
+    metadata:
+      labels:
+        app: travel-optimizer
+    spec:
+      containers:
+      - name: travel-optimizer-container
+        image: melvincerba/travel-optimizer-service-prod:0.0.1
+        ports:
+        - containerPort: 5000
+        command: ["/usr/local/bin/gunicorn"]
+        args: ["-b", "0.0.0.0:5000", "index:app"]
+        envFrom:
+        - configMapRef:
+            name: travel-optimizer-config
+        - secretRef:
+            name: travel-optimizer-secret
