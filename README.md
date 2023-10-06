@@ -19,11 +19,11 @@ This microservice application is composed of the following flask applications :
 For each service :
 
 1. Build and tag your image
-> docker build -t your-username/your-image-name:your-tag .
+    > docker build -t your-username/your-image-name:your-tag .
 
 2. Push it it to the docker hub registry
-> docker login
-> docker push your-username/your-image-name:your-tag
+    > docker login  
+    > docker push your-username/your-image-name:your-tag
 
 ### Apply kubernetes manifests to cluster
 
