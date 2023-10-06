@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource
-from app.api.interpret_travel_order import InterpretTravelOrder
+from app.api.interpret_travel_order_ressource import InterpretTravelOrder
 import os
 import logging
 from logging.handlers import RotatingFileHandler
@@ -37,7 +37,7 @@ def create_app():
 
     # Routes
     api = Api(app) 
-    api.add_resource(InterpretTravelOrder, '/travelOrder')
+    api.add_resource(InterpretTravelOrder, '/interpretTravelOrder')
 
     # Middlewares
     init_middlewares(app)

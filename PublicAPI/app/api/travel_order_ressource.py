@@ -5,22 +5,36 @@ import requests
 
 class TravelOrderResource(Resource):
     def post(self):
-        # Check if JSON is received with a text field
-        if request.is_json:
+        # Get the order from json or audio
+        if request.is_json: 
             data = request.get_json()
             if 'order' not in data:
                 return {"message": "The 'order' field is missing."}, 400
+            order = data['order']
+            current_app.logger.info("Received json order: " + order)
 
-            return {"message": "Received order: " + data['order']}, 200
+        else:
+            file = request.files.get('audio')
+            if not file:
+                return {"message": "No audio file provided."}, 400
+            current_app.logger.info("Received file " + file.filename)
+            transcription_response = requests.post("http://voice-recognition-service:5000/transcribe", files={"audio": (file.filename, file.stream, file.content_type, file.headers)})
+            if transcription_response.status_code != 200:
+                return transcription_response.json(), 500
+            order = transcription_response.json()['transcription']
+            current_app.logger.info("Computed transcription :" + order)
         
-        file = request.files.get('audio')
-        if not file:
-            return {"message": "No audio file provided."}, 400
+        # Get the origin and destination
+        nlp_response = requests.post("http://nlp-service:5000/interpretTravelOrder", json={'order': order})
+        if nlp_response.status_code != 200:
+            return nlp_response.json(), 500
+        travel_order = nlp_response.json()
+        current_app.logger.info("Interpreted travel order " + str(travel_order))
         
-        response = requests.post("http://voice-recognition-service:5000/transcribe", files={"audio": (file.filename, file.stream, file.content_type, file.headers)})
-
-        if response.status_code != 200:
-            return response.json(), 500
+        # Get travel plan
+        optimizer_response = requests.post("http://travel-optimizer-service:5000/travelPlan", json=travel_order)
+        if optimizer_response.status_code != 200:
+            return optimizer_response.json(), 500
         
-        return response.json(), 200
+        return optimizer_response.json(), 200
 
