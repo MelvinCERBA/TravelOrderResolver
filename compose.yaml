@@ -9,8 +9,10 @@ services:
       - "5001:5000"
     networks:
       - app-network
+    environment:
+      FLASK_ENV: development
     # command: tail -f /dev/null
-    command: flask --app index run --host=0.0.0.0 --debug
+    command: gunicorn -b 0.0.0.0:5000 index:app --reload
   
   travel-optimizer-service:
     build: ./TravelOptimizerService
@@ -21,8 +23,10 @@ services:
       - "5002:5000"
     networks:
       - app-network
+    environment:
+      FLASK_ENV: development
     # command: tail -f /dev/null
-    command: flask --app index run --host=0.0.0.0 --debug
+    command: gunicorn -b 0.0.0.0:5000 index:app --reload
 
   voice-recognition-service:
     build: ./VoiceRecognitionService
@@ -33,8 +37,11 @@ services:
       - "5003:5000"
     networks:
       - app-network
+    environment:
+      FLASK_ENV: development
+
     # command: tail -f /dev/null
-    command: flask --app index run --host=0.0.0.0 --debug
+    command: gunicorn -b 0.0.0.0:5000 index:app --reload
 
   nlp-service:
     build: ./NLPService
@@ -45,8 +52,10 @@ services:
       - "5004:5000"
     networks:
       - app-network
+    environment:
+      FLASK_ENV: development
     # command: tail -f /dev/null
-    command: flask --app index run --host=0.0.0.0 --debug
+    command: gunicorn -b 0.0.0.0:5000 index:app --reload
 
 networks:
   app-network:

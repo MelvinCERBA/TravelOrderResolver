@@ -1,2 +1,13 @@
-
 TravelOptimizerService/travel_graph.pkl
+.env
+*/__pycache__/*
+*.pyc
+
+*/test_data/*
+*/uploads/audio/*
+
+# Kubernetes
+secrets.yaml
+
+# Voice recognition service 
+*/models/*
