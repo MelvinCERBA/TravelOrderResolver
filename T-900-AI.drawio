@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="9L8Mlvx7ptYCxZx5tv1p" name="Page-2">
-        <mxGraphModel dx="1981" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1892" dy="403" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -97,19 +97,8 @@
                         <mxPoint x="-27" y="7" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="MPya0k2SZh1OT22v-Xzj-13" value="«External API»&lt;br&gt;&lt;b&gt;Gcloud Speech-to-text / AWS / ...&amp;nbsp;&lt;/b&gt;&lt;br&gt;Takes in a audio, outputs text" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Helvetica;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-                    <mxGeometry x="-120" width="200" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="MPya0k2SZh1OT22v-Xzj-14" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="MPya0k2SZh1OT22v-Xzj-13" vertex="1">
-                    <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
-                        <mxPoint x="-27" y="7" as="offset"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="MPya0k2SZh1OT22v-Xzj-15" value="TravelResolver" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;startSize=40;fillColor=#647687;strokeColor=#314354;" parent="1" vertex="1">
                     <mxGeometry x="-160" y="120" width="760" height="360" as="geometry"/>
-                </mxCell>
-                <mxCell id="MPya0k2SZh1OT22v-Xzj-16" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;endArrow=classic;startSize=8;endSize=8;" parent="1" source="MPya0k2SZh1OT22v-Xzj-6" target="MPya0k2SZh1OT22v-Xzj-13" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="MPya0k2SZh1OT22v-Xzj-29" value="DataModels" style="swimlane;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;startSize=40;" parent="1" vertex="1">
                     <mxGeometry x="-440" y="120" width="240" height="360" as="geometry"/>

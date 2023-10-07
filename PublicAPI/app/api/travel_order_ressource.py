@@ -32,9 +32,10 @@ class TravelOrderResource(Resource):
         current_app.logger.info("Interpreted travel order " + str(travel_order))
         
         # Get travel plan
-        optimizer_response = requests.post("http://travel-optimizer-service:5000/travelPlan", json=travel_order)
+        optimizer_response = requests.post("http://travel-optimizer-service:5000/fastest_route_mock", json=travel_order)
         if optimizer_response.status_code != 200:
             return optimizer_response.json(), 500
         
+        current_app.logger.info("Optimized travel plan computed " + str(optimizer_response.json()))
         return optimizer_response.json(), 200
 

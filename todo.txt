@@ -1,0 +1,7 @@
+[] merge l'optimizer de max
+[] full minikube deployment
+[] production deployment
+    [] ssl/tcp 
+    [] Terraform provisionning
+    [] load balancer ?
+    [] scaling
