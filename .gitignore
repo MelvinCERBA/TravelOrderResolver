@@ -1,4 +1,3 @@
-TravelOptimizerService/travel_graph.pkl
 .env
 */__pycache__/*
 *.pyc
@@ -11,3 +10,10 @@ secrets.yaml
 
 # Voice recognition service 
 */models/*
+
+# Optimizer's graph
+TravelOptimizerService/travel_graph.pkl
+
+# local files
+gpt.txt
+todo.txt
