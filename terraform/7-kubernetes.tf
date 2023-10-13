@@ -17,7 +17,7 @@ resource "google_container_cluster" "primary" {
 
   addons_config {
     http_load_balancing {
-      disabled = true
+      disabled = false
     }
     horizontal_pod_autoscaling {
       disabled = false
@@ -31,7 +31,7 @@ resource "google_container_cluster" "primary" {
 
   # Kubernetes Service Accounts are used to provide identity to pods running in the cluster. By allowing them to act as Google Cloud Service Accounts, you grant the pods specific permissions in GCP. This is useful for scenarios where, for instance, a pod needs to read data from a Google Cloud Storage bucket.
   workload_identity_config {
-    workload_pool = "devops-v4.svc.id.goog"
+    workload_pool = "travelorderresolver-401809.svc.id.goog"
   }
 
   ip_allocation_policy {
