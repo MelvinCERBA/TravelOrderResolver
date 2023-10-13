@@ -4,40 +4,31 @@ metadata:
   name: microservices-ingress
 spec:
   rules:
-  - host: nlp-service.local
+  - host: "*"
     http:
       paths:
-      - path: /
+      - path: /nlp-service
         pathType: Prefix
         backend:
           service:
             name: nlp-service
             port:
               number: 5000
-  - host: voice-recognition-service.local
-    http:
-      paths:
-      - path: /
+      - path: /voice-recognition-service
         pathType: Prefix
         backend:
           service:
             name: voice-recognition-service
             port:
               number: 5000
-  - host: travel-optimizer-service.local
-    http:
-      paths:
-      - path: /
+      - path: /travel-optimizer-service
         pathType: Prefix
         backend:
           service:
             name: travel-optimizer-service
             port:
               number: 5000
-  - host: public-api.local
-    http:
-      paths:
-      - path: /
+      - path: /public-api-service
         pathType: Prefix
         backend:
           service:
