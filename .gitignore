@@ -17,3 +17,6 @@ TravelOptimizerService/travel_graph.pkl
 # local files
 gpt.txt
 todo.txt
+
+# terraform files 
+.terraform/
