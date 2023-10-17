@@ -18,7 +18,7 @@ spec:
     app: public-api
   ports:
     - protocol: TCP
-      port: 5001
+      port: 5000
       targetPort: 5000
 
 ---
@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: public-api-container
-        image: melvincerba/public-api-service-prod:0.0.1 # Replace with your actual image location
+        image: melvincerba/public-api-service-prod:latest
         ports:
         - containerPort: 5000
         command: ["gunicorn"]

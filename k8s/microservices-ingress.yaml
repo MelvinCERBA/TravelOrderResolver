@@ -4,8 +4,7 @@ metadata:
   name: microservices-ingress
 spec:
   rules:
-  - host: "*"
-    http:
+  - http:
       paths:
       - path: /nlp-service
         pathType: Prefix

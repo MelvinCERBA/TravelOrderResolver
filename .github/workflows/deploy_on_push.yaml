@@ -1,0 +1,87 @@
+name: CD Pipeline
+
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Read versions.txt
+      id: versions
+      run: |
+        echo "::set-output name=nlp::$(grep NLPService versions.txt | cut -d= -f2)"
+        echo "::set-output name=voice::$(grep VoiceRecognitionService versions.txt | cut -d= -f2)"
+        echo "::set-output name=travel::$(grep TravelOptimizerService versions.txt | cut -d= -f2)"
+        echo "::set-output name=api::$(grep PublicAPI versions.txt | cut -d= -f2)"
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build, tag, and push Docker image for NLPService
+      uses: docker/build-push-action@v5
+      with:
+        context: ./NLPService
+        file: ./NLPService/Dockerfile.prod
+        tags: melvincerba/nlp-service-prod:latest 
+        push: true
+      
+    - name: Build, tag, and push Docker image for Voice Recognition Service
+      uses: docker/build-push-action@v5
+      with:
+        context: ./VoiceRecognitionService
+        file: ./VoiceRecognitionService/Dockerfile.prod
+        tags: melvincerba/voice-recognition-service-prod:latest 
+        push: true
+      
+    - name: Build, tag, and push Docker image for Travel Optimizer Service
+      uses: docker/build-push-action@v5
+      with:
+        context: ./TravelOptimizerService
+        file: ./TravelOptimizerService/Dockerfile.prod
+        tags: melvincerba/travel-optimizer-service-prod:latest 
+        push: true
+
+    - name: Build, tag, and push Docker image for Public API
+      uses: docker/build-push-action@v5
+      with:
+        context: ./PublicAPI
+        file: ./PublicAPI/Dockerfile.prod
+        tags: melvincerba/api-service-prod:latest 
+        push: true
+
+    - name: Setup kubectl
+      uses: azure/setup-kubectl@v1
+      with:
+        version: 'latest'
+
+    - name: Configure GKE credentials
+      run: |
+        echo "$GKE_SA_KEY" | base64 --decode > gke_sa_key.json
+        gcloud auth activate-service-account --key-file=gke_sa_key.json
+        gcloud container clusters get-credentials $CLUSTER_NAME --zone $ZONE --project $PROJECT_ID
+        rm gke_sa_key.json
+      env:
+        GKE_SA_KEY: ${{ secrets.GKE_SA_KEY }}
+        CLUSTER_NAME: primary
+        ZONE: europe-west9-a
+        PROJECT_ID: travelorderresolver-401809
+    
+
+    - name: Deploy to GKE
+      run: kubectl apply -f ./k8s/

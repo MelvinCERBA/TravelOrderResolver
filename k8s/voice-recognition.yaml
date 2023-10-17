@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: voice-recognition-container
-        image: melvincerba/voice-recognition-service-prod:0.0.2
+        image: melvincerba/voice-recognition-service-prod:latest
         ports:
         - containerPort: 5000
         command: ["/usr/local/bin/gunicorn"]

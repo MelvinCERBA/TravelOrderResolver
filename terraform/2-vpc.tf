@@ -1,10 +1,13 @@
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_project_service
 resource "google_project_service" "compute" {
+  disable_dependent_services = true 
   service = "compute.googleapis.com"
+  disable_on_destroy = false
 }
 
 resource "google_project_service" "container" {
   service = "container.googleapis.com"
+  disable_on_destroy = false
 }
 
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_network

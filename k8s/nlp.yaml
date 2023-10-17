@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: nlp-container
-        image: melvincerba/nlp-service-prod:0.0.1
+        image: melvincerba/nlp-service-prod:latest
         ports:
         - containerPort: 5000
         command: ["/usr/local/bin/gunicorn"]

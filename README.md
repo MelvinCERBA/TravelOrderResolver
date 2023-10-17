@@ -25,7 +25,28 @@ For each service :
     > docker login  
     > docker push your-username/your-image-name:your-tag
 
+### Create GKE cluster on gcloud using Terraform 
+
+> terraform apply
+
 ### Apply kubernetes manifests to cluster
+
+1. *(First time only)* Authenticate kubectl to gcloud
+    > gcloud config set project travelorderresolver-401809
+    > gcloud container clusters get-credentials "primary" --region "europe-west9-a"
+
+2. Apply all kubernetes manifests found in the k8s/ folder
+    > kubectl apply -f ./k8s
+
+3. Check that services  are ok 
+    > kubectl get svc
+
+4. Check that the ingress has properly started  
+    > kubectl describe ingress microservices-ingress
+
+5. Get the ip of the ingress ressource (Cloud HTTP(S) Load Balancer)
+    > kubectl get ingress microservices-ingress -o=jsonpath='{.status.loadBalancer.ingress[0].ip}'
+
 
 #### Test the k8s deployment locally
 
